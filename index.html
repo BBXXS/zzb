@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>解决背景音乐无法播放问题</title>
+<script language="javascript" type="text/javascript">
+function autoPlay(){
+var myAuto = document.getElementById('myaudio');
+myAuto.play();
+}
+</script>
 </head>
 <body>
-  <audio id="bgmusic" src="jsan.mp3" autoplay preload loop></audio>
-  <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js" type="text/javascript"></script>
- <script>
-    window.onload = function(){
-      function autoPlayAudio() {
-            wx.config({
-                // 配置信息, 即使不正确也能使用 wx.ready
-                debug: false
-                , appId: ''
-                , timestamp: 1
-                , nonceStr: ''
-                , signature: ''
-                , jsApiList: []
-            });
-            wx.ready(function () {
-              document.getElementById("bgmusic").play();
-            });
-        }
-    autoPlayAudio();
-  }
-  </script>
+<audio id="myaudio" src="https://mdz-tvapps.oss-cn-qingdao.aliyuncs.com/Test/huanledoudizhu.mp3" controls="controls" loop="false" hidden="true"  >
+</audio>
+<input type="button" onclick="autoPlay()" value="播放"/>
+
+
 </body>
 </html>
+
