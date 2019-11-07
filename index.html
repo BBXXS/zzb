@@ -17,10 +17,8 @@
     </head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"> <!--适配手机版-->
     <body>
-        <audio autoplay="autoplay">
-            <source src="renxi.mp3" type="audio/mp3" />
-        </audio>
-
+        <!--背景音乐-->
+         <audio style="display:none; height: 0" id="bg-music" preload="auto" src="jsan.mp3" loop="loop"></audio>
         <div id="main">
             <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
             <div id="wrap">
@@ -55,21 +53,12 @@
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            <audio src="love.mp3" autoplay="autoplay"></audio>
         </div>
     
     <script>
     </script>
 
     <script>
-    var audio=new Audio("renxi.mp3");
-    audio.preload="preload";
-    // 自动播放解决苹果不兼容autoplay属性
-    audio.loop=true;
-    audio.play();
-    document.addEventListener("WeixinJSBridgeReady", function () {
-    audio.play();
-    }, false);
     (function(){
         var canvas = $('#canvas');
 
