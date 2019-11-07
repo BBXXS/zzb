@@ -20,6 +20,7 @@
         <audio autoplay="autoplay">
             <source src="renxi.mp3" type="audio/mp3" />
         </audio>
+
         <div id="main">
             <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
             <div id="wrap">
@@ -61,6 +62,14 @@
     </script>
 
     <script>
+    var audio=new Audio("renxi.mp3");
+    audio.preload="preload";
+    // 自动播放解决苹果不兼容autoplay属性
+    audio.loop=true;
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+    audio.play();
+    }, false);
     (function(){
         var canvas = $('#canvas');
 
